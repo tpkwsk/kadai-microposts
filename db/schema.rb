@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170615073121) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["micropost_id"], name: "index_favorites_on_micropost_id", using: :btree
+    t.index ["user_id", "micropost_id"], name: "index_favorites_on_user_id_and_micropost_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 

@@ -9,7 +9,20 @@
       <% end %>
     </aside>
     <div class="col-xs-8">
-      <%= render 'microposts/microposts', microposts: @microposts, user: @user %>
+      <ul class="nav nav-tabs nav-justified">
+        <li>
+          <%= link_to root_path do %>Timelines <span class="badge"></span>
+          <%= render 'microposts/microposts', microposts: @microposts, user: @user %>
+          <% end %>
+        </li>
+      <!--</div>-->
+      <!--<div class="col-xs-8">-->
+        <li>
+          <%= link_to favoriteposts_user_path(@user) do %>Favorites <span class="badge"><%= @count_favorites %></span>
+          <%= render 'microposts/microposts', microposts: @favoriteposts, user: @user %>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 <% else %>
