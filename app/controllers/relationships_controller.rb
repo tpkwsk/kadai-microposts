@@ -3,7 +3,7 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:follow_id])
     current_user.follow(user)
     flash[:success] = 'ユーザをフォローしました。'
-    redirect_to us
+    redirect_to user
   end
 
   def destroy
